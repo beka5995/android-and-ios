@@ -40,10 +40,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Text(isFollowing ? 'Following' : 'Follow'),
                 ),
                 IconButton(
-                  icon: Icon(isLiked ? Icons.favorite : Icons.favorite_border, color: Colors.red),
+                  icon: const Icon(Icons.remove, color: Colors.red),
                   onPressed: () => setState(() {
-                    isLiked = !isLiked;
-                    isLiked ? likes++ : likes--;
+                    likes--;
+                  }),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.add, color: Colors.green),
+                  onPressed: () => setState(() {
+                    likes++;
                   }),
                 ),
               ],
